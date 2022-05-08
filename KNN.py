@@ -2,7 +2,7 @@ import numpy as np
 from collections import Counter
 
 def euclideanDistance(x, y):
-    return np.sqrt((x-y)**2)
+    return np.sqrt(np.sum((x-y)**2))
 
 class KNN:
     def __init__(self, k=3):
@@ -17,14 +17,13 @@ class KNN:
         return predictions
 
     def singlePredict(self, x):
-        distances = [euclideanDistance(x, x_train)\
-        for x_train in self.X_train]
-        idxDist = np.argsort(distances)
+        distances = [euclideanDistance(x, x_train) for x_train in self.X_train]
+        idxDist = np.argsort(distances)[:self.k]
         nearLabels = [self.y_train[idx] for idx in idxDist]
         most_common = Counter(nearLabels).most_common(1)
         return most_common[0][0]
 
-if __name__ == "main":
+if __name__ == "__main__":
     # Imports
     from matplotlib.colors import ListedColormap
     from sklearn import datasets
@@ -48,5 +47,6 @@ if __name__ == "main":
     clf.fit(X_train, y_train)
     predictions = clf.predict(X_test)
     print("KNN classification accuracy", accuracy(y_test, predictions))
+    
 
         
