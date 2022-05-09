@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 
 def r2_score(y_true, y_pred):
@@ -15,10 +16,10 @@ class LinearRegression:
         self.bias = None
 
     def fit(self, X, y):
-        n_samples, n_features = X.shape
+        n_samples,  = X.shape
 
         # init parameters
-        self.weights = np.zeros(n_features)
+        self.weights = np.zeros(1)
         self.bias = 0
 
         # gradient descent
@@ -35,3 +36,18 @@ class LinearRegression:
     def predict(self, X):
         y_approximated = np.dot(X, self.weights) + self.bias
         return y_approximated
+
+
+df = pd.read_csv('datasets//Summary of Weather.csv')
+print(np.array(df['MaxTemp'].head()))
+print(np.array(df['MinTemp'].head()))
+
+X = np.array(df['MaxTemp'])
+Y = np.array(df['MinTemp'])
+
+
+LinearReg = LinearRegression()
+LinearReg.fit(X, Y)
+
+X_test = [1, 2, 5, 8]
+print(LinearReg.predict(X_test))
