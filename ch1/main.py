@@ -23,6 +23,3 @@ plt.xticks([w*7*24 for w in range(10)],
 plt.autoscale(tight=True)
 plt.grid()
 plt.show()
-
-
-fp1, residuals, rank, sv, rcond = sp.polyfit(x, y, 1, full=True)
