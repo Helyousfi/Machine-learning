@@ -16,10 +16,10 @@ class LinearRegression:
         self.bias = None
 
     def fit(self, X, y):
-        n_samples,  = X.shape
+        n_samples, n_features = X.shape
 
         # init parameters
-        self.weights = np.zeros(1)
+        self.weights = np.zeros(n_features)
         self.bias = 0
 
         # gradient descent

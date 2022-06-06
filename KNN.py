@@ -20,11 +20,12 @@ class KNN:
         distances = [euclideanDistance(x, x_train) for x_train in self.X_train]
         idxDist = np.argsort(distances)[:self.k]
         nearLabels = [self.y_train[idx] for idx in idxDist]
-        most_common = Counter(nearLabels).most_common(1)
+        most_common = Counter(nearLabels).most_common(1) # [9,4,4,4,5,6] returns [(4,3), (5,1) ...]
         return most_common[0][0]
 
 if __name__ == "__main__":
     # Imports
+    import matplotlib.pyplot as plt
     from matplotlib.colors import ListedColormap
     from sklearn import datasets
     from sklearn.model_selection import train_test_split
@@ -38,6 +39,10 @@ if __name__ == "__main__":
     iris = datasets.load_iris()
     X, y = iris.data, iris.target
 
+    print(y.max())
+    print(X[100:105])
+    print(y[100:105])
+    
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=1234
     )
@@ -48,5 +53,4 @@ if __name__ == "__main__":
     predictions = clf.predict(X_test)
     print("KNN classification accuracy", accuracy(y_test, predictions))
     
-
         
