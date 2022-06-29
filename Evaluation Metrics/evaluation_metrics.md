@@ -9,7 +9,7 @@ The accuracy can be used when all the classes are of the same importance to us o
 TP = True positive : the model predicts that the class is positive &  correctly classified <br>
 FP = False positive : the model predicts that the class is positive &  miss-classified <br>
 TN = True negative : the model predicts that the class is negative & correctly classified <br>
-FN = False negative : the model predicts that the class is negative & miss-classified <br>
+FN = False negative : the model predicts that the class is negative & miss-classified 
 $$
 precision = \frac{TP}{TP + FP}
 $$
