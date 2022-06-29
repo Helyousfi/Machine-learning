@@ -5,6 +5,22 @@ $$ ACC = \frac{TP + TN}{TP + TN + FP + FN} $$
 The accuracy shouldn't be used on problems with inbalanced data, because it's easy to get a high accuracy by just classifying all observations as the majority class.  <br>
 The accuracy can be used when all the classes are of the same importance to us or when the data is balanced.
 
+## Precision
+TP = True positive : the model predicts that the class is positive &  correctly classified <br>
+FP = False positive : the model predicts that the class is positive &  miss-classified <br>
+TN = True negative : the model predicts that the class is negative & correctly classified <br>
+FN = False negative : the model predicts that the class is negative & miss-classified <br>
+$$
+precision = \frac{TP}{TP + FP}
+$$
+Precision refers to the percentage of your results which are relevant.
+
+## Recall
+$$
+recall = \frac{TP}{TP + FN}
+$$
+The recall refers to the percentage of total relevant results correctly classified by a model.
+
 ## F1 Score
 It combines precision and recall in one metric by calculating the harmonic mean between those two. It's a special case of the $F_\beta$ function :
 $$
