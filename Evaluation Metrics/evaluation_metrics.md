@@ -16,9 +16,7 @@ $$
 Precision refers to the percentage of your results which are relevant.
 
 ## Recall
-$$
-recall = \frac{TP}{TP + FN}
-$$
+$$recall = \frac{TP}{TP + FN}$$
 The recall refers to the percentage of total relevant results correctly classified by a model.
 
 ## F1 Score
