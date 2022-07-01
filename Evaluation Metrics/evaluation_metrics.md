@@ -10,9 +10,7 @@ TP = True positive : the model predicts that the class is positive &  correctly 
 FP = False positive : the model predicts that the class is positive &  miss-classified <br>
 TN = True negative : the model predicts that the class is negative & correctly classified <br>
 FN = False negative : the model predicts that the class is negative & miss-classified <br>
-$$
-precision = \frac{TP}{TP + FP}
-$$
+$$precision = \frac{TP}{TP + FP}$$
 Precision refers to the percentage of your results which are relevant.
 
 ## Recall
@@ -21,9 +19,7 @@ The recall refers to the percentage of total relevant results correctly classifi
 
 ## F1 Score
 It combines precision and recall in one metric by calculating the harmonic mean between those two. It's a special case of the $F_\beta$ function :
-$$
-F_\beta = (1+\beta^2)\frac{precision\times recall}{\beta^2 precision + recall}
-$$
+$$F_\beta = (1+\beta^2)\frac{precision\times recall}{\beta^2 precision + recall}$$
 If we want to care more about precision, we will choose a high beta, otherwise, if we want to care more about recall, we will choose a low beta. <br>
 The F1 score could be used in pretty much in every binary classification problem where you care more about the positive class. It is my go-to metric when working on those problems.  
 
