@@ -32,5 +32,9 @@ The F1 score could be used in pretty much in every binary classification problem
 ## ROC AUC
 AUC means area under the curve so to speak about ROC AUC score we need to define ROC curve first. 
 It is a chart that visualizes the tradeoff between true positive rate (TPR) and false positive rate (FPR). Basically, for every threshold, we calculate TPR and FPR and plot it on one chart. <br>
-it can be used when we care equally about positive and negative classes.
+it can be used when we care equally about positive and negative classes. <br>
+
+
+For more details : 
+https://neptune.ai/blog/f1-score-accuracy-roc-auc-pr-auc
 
